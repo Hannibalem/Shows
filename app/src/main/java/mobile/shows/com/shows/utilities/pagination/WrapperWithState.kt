@@ -1,28 +1,27 @@
 package mobile.shows.com.shows.utilities.pagination
 
-enum class State {
-    EMPTY, LOADED, LOADING
-}
-
 interface WrapperWithState<ValueT> {
 
-    var state: State
-    var data: ValueT
+    var state: State<ValueT>
 
-    fun onLoaded(data: ValueT) {
-        this.data = data
-        state = State.LOADED
-    }
+    fun onLoading() { state = State.Loading<ValueT>() }
 
-    fun onEmpty() {
-        state = State.EMPTY
-    }
+    fun onEmpty() { state = State.Empty<ValueT>() }
 
-    fun onLoading() {
-        state = State.LOADING
-    }
+    fun onLoaded(data: ValueT) { state = State.Data<ValueT>(data) }
 
-    fun isEmpty() = state == State.EMPTY
+    fun isEmpty() = state is State.Empty<ValueT>
+}
+
+sealed class State<out ValueT> {
+
+    abstract val data: ValueT?
+
+    data class Empty<out ValueT>(override val data: ValueT? = null) : State<ValueT>()
+
+    data class Loading<out ValueT>(override val data: ValueT? = null) : State<ValueT>()
+
+    data class Data<out ValueT>(override val data: ValueT) : State<ValueT>()
 }
 
 interface WrapperWithStateFactory<ValueT, out ModelT: WrapperWithState<ValueT>> {
