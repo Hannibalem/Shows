@@ -62,7 +62,7 @@
                 android:id="@+id/images"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:visible="@{viewModel.loading}"
+                app:visible="@{viewModel.loadingFinished}"
                 app:similar_shows="@{viewModel.dataSource}"/>
 
         </LinearLayout>

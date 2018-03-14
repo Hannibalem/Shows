@@ -27,7 +27,7 @@ class SingleShowViewModel(
     val description = show.description
 
     @get:Bindable
-    var loading by BindableDelegate(true, BR.loading)
+    var loadingFinished by BindableDelegate(false, BR.loadingFinished)
 
     fun destroy() {
         disposables.clear()
@@ -43,7 +43,7 @@ class SingleShowViewModel(
     private fun onPageLoaded(shows: Shows) {
         dataSource.totalResults = shows.total
         dataSource.addNewItems(shows.list)
-        this.loading = false
+        loadingFinished = true
         notifyPropertyChanged(BR.dataSource)
     }
 
