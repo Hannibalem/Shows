@@ -1,7 +1,7 @@
 package mobile.shows.com.shows.navigation
 
 import android.content.Context
-import mobile.shows.com.shows.domain.model.Show
+import mobile.shows.com.shows.domain.usecase.Show
 
 interface Navigator {
 

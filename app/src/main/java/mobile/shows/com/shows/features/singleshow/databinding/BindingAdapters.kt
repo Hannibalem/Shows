@@ -3,7 +3,7 @@ package mobile.shows.com.shows.features.singleshow.databinding
 import android.databinding.BindingAdapter
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import mobile.shows.com.shows.domain.model.Show
+import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
 import mobile.shows.com.shows.features.singleshow.adapter.SimilarShowsAdapter
 import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewModel

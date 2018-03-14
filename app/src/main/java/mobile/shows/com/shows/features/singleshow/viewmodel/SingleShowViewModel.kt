@@ -4,7 +4,7 @@ import android.databinding.BaseObservable
 import android.databinding.Bindable
 import io.reactivex.disposables.CompositeDisposable
 import mobile.shows.com.shows.BR
-import mobile.shows.com.shows.domain.model.Show
+import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
@@ -19,11 +19,11 @@ class SingleShowViewModel(
 
     private val disposables = CompositeDisposable()
 
-    val imageUrl = "https://image.tmdb.org/t/p/w500${show.poster_path}"
+    val imageUrl = "https://image.tmdb.org/t/p/w500${show.image_url}"
 
-    val title = show.name
+    val title = show.title
 
-    val description = show.overview
+    val description = show.description
 
     @get:Bindable
     var loading = true

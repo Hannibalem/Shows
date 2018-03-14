@@ -2,8 +2,8 @@ package mobile.shows.com.shows.navigation
 
 import android.content.Context
 import android.content.Intent
+import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.allshows.MainActivity
-import mobile.shows.com.shows.domain.model.Show
 import mobile.shows.com.shows.features.singleshow.SingleShowActivity
 
 class NavigatorImpl(override val context: Context): Navigator {

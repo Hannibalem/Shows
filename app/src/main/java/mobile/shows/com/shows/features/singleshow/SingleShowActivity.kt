@@ -9,7 +9,7 @@ import com.google.gson.Gson
 import mobile.shows.com.shows.DaggerDependencies
 import mobile.shows.com.shows.R
 import mobile.shows.com.shows.databinding.ActivitySingleShowBinding
-import mobile.shows.com.shows.domain.model.Show
+import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.singleshow.viewmodel.SingleShowViewModel
 import javax.inject.Inject
 

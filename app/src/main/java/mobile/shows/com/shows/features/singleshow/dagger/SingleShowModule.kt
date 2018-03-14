@@ -4,13 +4,13 @@ import android.app.Activity
 import dagger.Module
 import dagger.Provides
 import mobile.shows.com.shows.utilities.dagger.ActivityScope
-import mobile.shows.com.shows.domain.model.Show
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
 import mobile.shows.com.shows.utilities.pagination.usecase.PagedUseCase
 import mobile.shows.com.shows.utilities.pagination.WrapperWithStateFactory
 import mobile.shows.com.shows.domain.api.ApiService
+import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.singleshow.pagination.SimilarShowsDataSource
 import mobile.shows.com.shows.domain.usecase.similarshows.GetSimilarShowsByPageUseCase
 import mobile.shows.com.shows.domain.usecase.similarshows.GetSimilarShowsUseCase
