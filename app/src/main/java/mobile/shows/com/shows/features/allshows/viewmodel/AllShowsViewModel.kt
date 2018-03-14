@@ -8,6 +8,7 @@ import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
 import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.shows.utilities.databinding.BindableDelegate
 
 class AllShowsViewModel(
         private val useCase: UseCase<Shows>,
@@ -17,22 +18,10 @@ class AllShowsViewModel(
     private val disposables = CompositeDisposable()
 
     @get:Bindable
-    var errorHappened = false
-        private set(value) {
-            if (field != value) {
-                field = value
-                notifyPropertyChanged(BR.errorHappened)
-            }
-        }
+    var errorHappened by BindableDelegate(false, BR.errorHappened)
 
     @get:Bindable
-    var loading = true
-        private set(value) {
-            if (field != value) {
-                field = value
-                notifyPropertyChanged(BR.loading)
-            }
-        }
+    var loading by BindableDelegate(true, BR.loading)
 
     fun destroy() {
         disposables.clear()

@@ -9,6 +9,7 @@ import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
 import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.shows.utilities.databinding.BindableDelegate
 
 class SingleShowViewModel(
         show: Show,
@@ -26,13 +27,7 @@ class SingleShowViewModel(
     val description = show.description
 
     @get:Bindable
-    var loading = true
-        private set(value) {
-            if (field != value) {
-                field = !value
-                notifyPropertyChanged(BR.loading)
-            }
-        }
+    var loading by BindableDelegate(true, BR.loading)
 
     fun destroy() {
         disposables.clear()
