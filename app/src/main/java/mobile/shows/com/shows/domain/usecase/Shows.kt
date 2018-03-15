@@ -17,4 +17,4 @@ data class Show(
 }
 
 fun List<ShowAPI>.map(): List<Show>
-        = this.map { Show(it.id, it.name, it.vote_average, it.overview, it.poster_path) }
+        = this.map { Show(it.id, it.name, it.vote_average, it.overview ?: "", it.poster_path ?: "") }
