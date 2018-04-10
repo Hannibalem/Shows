@@ -3,9 +3,9 @@ package mobile.shows.com.shows.domain.usecase.similarshows
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 import mobile.shows.com.shows.domain.api.ApiService
-import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.domain.usecase.map
 
 class GetSimilarShowsByPageUseCase(

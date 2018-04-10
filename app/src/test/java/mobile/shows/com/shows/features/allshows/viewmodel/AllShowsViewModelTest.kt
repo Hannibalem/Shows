@@ -7,7 +7,7 @@ import io.reactivex.Single
 import mobile.shows.com.shows.domain.model.Show
 import mobile.shows.com.shows.domain.api.ShowsAPI
 import mobile.shows.com.shows.utilities.pagination.PagedDataSource
-import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.commons.domain.usecases.UseCase
 import org.junit.Assert
 import org.junit.Test
 

@@ -5,11 +5,11 @@ import dagger.Module
 import dagger.Provides
 import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.pagination.WrapperWithStateFactory
-import mobile.shows.com.shows.utilities.dagger.ActivityScope
+import mobile.shows.com.commons.dagger.ActivityScope
+import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
 import mobile.shows.com.shows.domain.api.ApiService
-import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.singleshow.pagination.SimilarShowsDataSource
 import mobile.shows.com.shows.domain.usecase.similarshows.GetSimilarShowsByPageUseCase
 import mobile.shows.com.shows.domain.usecase.similarshows.GetSimilarShowsUseCase
@@ -17,7 +17,7 @@ import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewModel
 import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewModelFactory
 import mobile.shows.com.shows.features.singleshow.viewmodel.SingleShowViewModel
-import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.commons.domain.usecases.UseCase
 import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 
 @Module

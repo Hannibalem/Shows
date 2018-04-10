@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.utilities.dagger
+package mobile.shows.com.commons.dagger
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention

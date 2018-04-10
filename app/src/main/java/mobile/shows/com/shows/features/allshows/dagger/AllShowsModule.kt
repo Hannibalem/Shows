@@ -12,13 +12,13 @@ import mobile.shows.com.shows.features.allshows.viewmodel.CardShowViewModel
 import mobile.shows.com.shows.features.allshows.viewmodel.CardShowViewModelFactory
 import mobile.shows.com.shows.features.allshows.pagination.ShowsDataSource
 import mobile.shows.com.shows.domain.usecase.allshows.GetShowsUseCase
-import mobile.shows.com.shows.utilities.dagger.ActivityScope
+import mobile.shows.com.commons.dagger.ActivityScope
+import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
 import mobile.shows.com.shows.domain.api.ApiService
-import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.domain.usecase.Shows
-import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.commons.domain.usecases.UseCase
 
 @Module
 class AllShowsModule(private val activity: Activity) {

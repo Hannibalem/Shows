@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.domain.usecase
+package mobile.shows.com.commons.domain.usecases
 
 import io.reactivex.Single
 

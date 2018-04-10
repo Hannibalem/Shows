@@ -5,7 +5,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import mobile.shows.com.shows.domain.api.ApiService
 import mobile.shows.com.shows.domain.usecase.Shows
-import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.commons.domain.usecases.UseCase
 import mobile.shows.com.shows.domain.usecase.map
 
 class GetSimilarShowsUseCase(

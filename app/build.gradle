@@ -56,4 +56,5 @@ dependencies {
     implementation project(':allshows')
     implementation project(':pagination')
     implementation project(':databinding-utils')
+    implementation project(':commons')
 }

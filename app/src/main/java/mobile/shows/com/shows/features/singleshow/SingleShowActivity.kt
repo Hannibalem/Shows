@@ -6,10 +6,10 @@ import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.gson.Gson
+import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.DaggerDependencies
 import mobile.shows.com.shows.R
 import mobile.shows.com.shows.databinding.ActivitySingleShowBinding
-import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.singleshow.viewmodel.SingleShowViewModel
 import javax.inject.Inject
 
