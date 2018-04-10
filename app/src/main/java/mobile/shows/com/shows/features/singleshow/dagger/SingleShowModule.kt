@@ -3,12 +3,11 @@ package mobile.shows.com.shows.features.singleshow.dagger
 import android.app.Activity
 import dagger.Module
 import dagger.Provides
+import mobile.shows.com.pagination.PagedDataSource
+import mobile.shows.com.pagination.WrapperWithStateFactory
 import mobile.shows.com.shows.utilities.dagger.ActivityScope
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
-import mobile.shows.com.shows.utilities.pagination.PagedDataSource
-import mobile.shows.com.shows.utilities.pagination.usecase.PagedUseCase
-import mobile.shows.com.shows.utilities.pagination.WrapperWithStateFactory
 import mobile.shows.com.shows.domain.api.ApiService
 import mobile.shows.com.shows.domain.usecase.Show
 import mobile.shows.com.shows.features.singleshow.pagination.SimilarShowsDataSource
@@ -19,6 +18,7 @@ import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewM
 import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewModelFactory
 import mobile.shows.com.shows.features.singleshow.viewmodel.SingleShowViewModel
 import mobile.shows.com.shows.domain.usecase.UseCase
+import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 
 @Module
 class SingleShowModule(private val activity: Activity, private val show: Show) {

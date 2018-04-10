@@ -3,13 +3,13 @@ package mobile.shows.com.shows.features.allshows.dagger
 import android.app.Activity
 import dagger.Module
 import dagger.Provides
-import mobile.shows.com.shows.utilities.pagination.usecase.PagedUseCase
+import mobile.shows.com.pagination.PagedDataSource
+import mobile.shows.com.pagination.WrapperWithStateFactory
+import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 import mobile.shows.com.shows.domain.usecase.allshows.GetShowsByPageUseCase
 import mobile.shows.com.shows.features.allshows.viewmodel.AllShowsViewModel
 import mobile.shows.com.shows.features.allshows.viewmodel.CardShowViewModel
 import mobile.shows.com.shows.features.allshows.viewmodel.CardShowViewModelFactory
-import mobile.shows.com.shows.utilities.pagination.PagedDataSource
-import mobile.shows.com.shows.utilities.pagination.WrapperWithStateFactory
 import mobile.shows.com.shows.features.allshows.pagination.ShowsDataSource
 import mobile.shows.com.shows.domain.usecase.allshows.GetShowsUseCase
 import mobile.shows.com.shows.utilities.dagger.ActivityScope

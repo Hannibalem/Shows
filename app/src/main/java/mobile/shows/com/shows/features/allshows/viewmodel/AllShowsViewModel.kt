@@ -3,9 +3,9 @@ package mobile.shows.com.shows.features.allshows.viewmodel
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import io.reactivex.disposables.CompositeDisposable
+import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.shows.BR
 import mobile.shows.com.shows.domain.usecase.Show
-import mobile.shows.com.shows.utilities.pagination.PagedDataSource
 import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.shows.domain.usecase.UseCase
 import mobile.shows.com.shows.utilities.databinding.BindableDelegate

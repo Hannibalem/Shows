@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.utilities.pagination.recyclerview
+package mobile.shows.com.shows.pagination.recyclerview
 
 import android.content.Context
 import android.databinding.DataBindingUtil

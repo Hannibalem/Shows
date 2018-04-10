@@ -1,8 +1,8 @@
-package mobile.shows.com.shows.utilities.pagination
+package mobile.shows.com.pagination
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Function
-import mobile.shows.com.shows.utilities.pagination.usecase.PagedUseCase
+import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 
 const val DEFAULT_PAGE_SIZE = 20
 const val DEFAULT_PAGES_PER_CHUNK = 2
@@ -26,8 +26,6 @@ open class PagedDataSource<ValueT, ModelT: WrapperWithState<ValueT>>(
     fun addDataChangedListener(listener: Function<List<ModelT>, Unit>) = listeners.add(listener)
 
     fun removeDataChangedListener(listener: Function<List<ModelT>, Unit>) = listeners.remove(listener)
-
-    private fun notifyPropertyChanged() = listeners.forEach { it.apply(pagedList) }
 
     fun clear() {
         disposables.clear()
@@ -53,12 +51,12 @@ open class PagedDataSource<ValueT, ModelT: WrapperWithState<ValueT>>(
     private fun calculatePageForItem(position: Int) = (position / pageSize) + 1
 
     private fun shouldPrefetchNextPage(position: Int)
-            = isInPrefetchPosition(position) && !isPagePrefetch(position)
+            = isInPrefetchPosition(position) && !isPagePrefetched(position)
 
     private fun isInPrefetchPosition(position: Int)
             = pageSize - (position % pageSize) == prefetchOffsetInItems
 
-    private fun isPagePrefetch(position: Int): Boolean {
+    private fun isPagePrefetched(position: Int): Boolean {
         val page = calculatePageForItem(position) + 1
         val initialPosition = (page - 1) * pageSize
         return pagedList.size > initialPosition && !pagedList[initialPosition].isEmpty()
@@ -99,6 +97,8 @@ open class PagedDataSource<ValueT, ModelT: WrapperWithState<ValueT>>(
 
         notifyPropertyChanged()
     }
+
+    private fun notifyPropertyChanged() = listeners.forEach { it.apply(pagedList) }
 
     private fun loadItems(result: List<ValueT>, page: Int) {
         val initialPosition = (page - 1) * pageSize

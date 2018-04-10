@@ -1,11 +1,11 @@
 package mobile.shows.com.shows.features.singleshow.adapter
 
 import android.content.Context
+import mobile.shows.com.pagination.PagedDataSource
+import mobile.shows.com.pagination.RecyclerViewPaginationAdapter
 import mobile.shows.com.shows.R
 import mobile.shows.com.shows.databinding.CardSimilarShowBinding
 import mobile.shows.com.shows.domain.usecase.Show
-import mobile.shows.com.shows.utilities.pagination.PagedDataSource
-import mobile.shows.com.shows.utilities.pagination.RecyclerViewPaginationAdapter
 import mobile.shows.com.shows.features.singleshow.viewmodel.CardSimilarShowViewModel
 
 class SimilarShowsAdapter(

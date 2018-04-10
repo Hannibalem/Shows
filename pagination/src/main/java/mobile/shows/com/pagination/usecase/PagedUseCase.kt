@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.utilities.pagination.usecase
+package mobile.shows.com.shows.pagination.usecase
 
 import io.reactivex.Single
 
