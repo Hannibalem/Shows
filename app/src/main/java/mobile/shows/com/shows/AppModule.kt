@@ -5,6 +5,8 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import mobile.shows.com.shows.domain.api.ApiService
+import mobile.shows.com.shows.domain.api.NetworkGatewayImpl
+import mobile.shows.com.shows.domain.gateways.NetworkGateway
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,5 +35,11 @@ class AppModule(private var application: Application) {
     @Singleton
     internal fun provideService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideNetworkGateway(service: ApiService): NetworkGateway {
+        return NetworkGatewayImpl(service)
     }
 }

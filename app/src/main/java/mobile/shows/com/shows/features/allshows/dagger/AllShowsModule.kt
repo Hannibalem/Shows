@@ -14,11 +14,11 @@ import mobile.shows.com.shows.features.allshows.pagination.ShowsDataSource
 import mobile.shows.com.shows.domain.usecase.allshows.GetShowsUseCase
 import mobile.shows.com.commons.dagger.ActivityScope
 import mobile.shows.com.commons.domain.entities.Show
+import mobile.shows.com.commons.domain.entities.Shows
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
-import mobile.shows.com.shows.domain.api.ApiService
-import mobile.shows.com.shows.domain.usecase.Shows
 import mobile.shows.com.commons.domain.usecases.UseCase
+import mobile.shows.com.shows.domain.gateways.NetworkGateway
 
 @Module
 class AllShowsModule(private val activity: Activity) {
@@ -31,14 +31,14 @@ class AllShowsModule(private val activity: Activity) {
 
     @Provides
     @ActivityScope
-    fun provideUseCase(api: ApiService): UseCase<Shows> {
-        return GetShowsUseCase(api)
+    fun provideUseCase(gateway: NetworkGateway): UseCase<Shows> {
+        return GetShowsUseCase(gateway)
     }
 
     @Provides
     @ActivityScope
-    fun providePagedUseCase(api: ApiService): PagedUseCase<List<Show>> {
-        return GetShowsByPageUseCase(api)
+    fun providePagedUseCase(gateway: NetworkGateway): PagedUseCase<List<Show>> {
+        return GetShowsByPageUseCase(gateway)
     }
 
     @Provides

@@ -1,5 +1,7 @@
 package mobile.shows.com.commons.domain.entities
 
+data class Shows(val total: Int, val list: List<Show>)
+
 data class Show(
         val id: Int,
         val title: String,

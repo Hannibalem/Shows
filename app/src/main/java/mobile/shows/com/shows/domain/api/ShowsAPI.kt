@@ -1,5 +1,8 @@
 package mobile.shows.com.shows.domain.api
 
+import mobile.shows.com.commons.domain.entities.Show
+import mobile.shows.com.commons.domain.entities.Shows
+
 data class ShowsAPI(
         val page: Int,
         val total_results: Int,
@@ -14,3 +17,9 @@ data class ShowAPI(
         val overview: String,
         val poster_path: String
 )
+
+fun List<ShowAPI>.map(): List<Show>
+        = this.map { Show(it.id, it.name, it.vote_average, it.overview ?: "", it.poster_path ?: "") }
+
+fun ShowsAPI.map(): Shows = Shows(total_results, results.map())
+
