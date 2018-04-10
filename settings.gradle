@@ -1,1 +1,1 @@
-include ':app', ':allshows', ':pagination'
+include ':app', ':allshows', ':pagination', ':databinding-utils'

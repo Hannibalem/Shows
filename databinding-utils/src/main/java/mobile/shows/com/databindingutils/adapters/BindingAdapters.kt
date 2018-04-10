@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.utilities.databinding
+package mobile.shows.com.databindingutils.adapters
 
 import android.databinding.BindingAdapter
 import android.view.View
