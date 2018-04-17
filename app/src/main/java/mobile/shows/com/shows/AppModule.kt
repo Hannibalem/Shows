@@ -7,17 +7,23 @@ import dagger.Provides
 import mobile.shows.com.shows.domain.api.ApiService
 import mobile.shows.com.shows.domain.api.NetworkGatewayImpl
 import mobile.shows.com.shows.domain.gateways.NetworkGateway
+import mobile.shows.com.shows.navigation.Navigator
+import mobile.shows.com.shows.navigation.NavigatorImpl
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class AppModule(private var application: Application) {
+class AppModule {
 
     @Provides
     @Singleton
-    internal fun provideContext(): Context {
+    internal fun application(app: App): Application = app
+
+    @Provides
+    @Singleton
+    internal fun provideContext(application: Application): Context {
         return application.applicationContext
     }
 
@@ -42,4 +48,23 @@ class AppModule(private var application: Application) {
     internal fun provideNetworkGateway(service: ApiService): NetworkGateway {
         return NetworkGatewayImpl(service)
     }
+
+    @Provides
+    @Singleton
+    internal fun provideSingleShowNetworkGateway(networkGateway: NetworkGateway): mobile.shows.com.singleshow.domain.NetworkGateway {
+        return networkGateway
+    }
+
+    @Provides
+    @Singleton
+    fun provideNavigator(context: Context): Navigator {
+        return NavigatorImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSingleShowNavigator(navigator: Navigator): mobile.shows.com.singleshow.domain.Navigator {
+        return navigator
+    }
+
 }

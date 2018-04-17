@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -6,7 +6,6 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "mobile.shows.com.shows"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -25,7 +24,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     [
             'design',
             'support-v4',
@@ -37,8 +36,6 @@ dependencies {
         implementation "com.android.support:${it}:26.1.0"
     }
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.1.0'
@@ -55,10 +52,9 @@ dependencies {
     testImplementation 'com.squareup.retrofit2:retrofit-mock:2.3.0'
     testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
     testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':allshows')
-    implementation project(':singleshow')
     implementation project(':pagination')
     implementation project(':databinding-utils')
     implementation project(':commons')

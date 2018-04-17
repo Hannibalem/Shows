@@ -19,8 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="mobile.shows.com.shows.features.singleshow.SingleShowActivity">
-        </activity>
     </application>
 
 </manifest>

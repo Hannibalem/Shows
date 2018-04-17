@@ -5,7 +5,7 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import mobile.shows.com.shows.DaggerDependencies
+import dagger.android.AndroidInjection
 import mobile.shows.com.shows.R
 import mobile.shows.com.shows.databinding.ActivityMainBinding
 import mobile.shows.com.shows.features.allshows.viewmodel.AllShowsViewModel
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         if (lastCustomNonConfigurationInstance != null) {
             viewModel = lastCustomNonConfigurationInstance as AllShowsViewModel
         } else {
-            DaggerDependencies.inject(this)
+            AndroidInjection.inject(this)
             viewModel.loadInitial()
         }
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)

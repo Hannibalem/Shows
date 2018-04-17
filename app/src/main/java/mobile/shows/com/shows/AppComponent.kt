@@ -1,17 +1,24 @@
 package mobile.shows.com.shows
 
 import dagger.Component
-import mobile.shows.com.shows.features.allshows.dagger.AllShowsComponent
-import mobile.shows.com.shows.features.allshows.dagger.AllShowsModule
-import mobile.shows.com.shows.features.singleshow.dagger.SingleShowComponent
-import mobile.shows.com.shows.features.singleshow.dagger.SingleShowModule
+import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
+import dagger.BindsInstance
 
 @Singleton
-@Component(modules = arrayOf(AppModule::class))
+@Component(modules = arrayOf(
+        AndroidInjectionModule::class,
+        AppModule::class,
+        ActivitiesModule::class
+))
 interface AppComponent {
 
-    fun plus(module: AllShowsModule): AllShowsComponent
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: App): Builder
+        fun build(): AppComponent
+    }
 
-    fun plus(module: SingleShowModule): SingleShowComponent
+    fun inject(app: App)
 }

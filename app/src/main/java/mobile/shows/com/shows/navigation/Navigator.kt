@@ -1,13 +1,9 @@
 package mobile.shows.com.shows.navigation
 
 import android.content.Context
-import mobile.shows.com.commons.domain.entities.Show
+import mobile.shows.com.singleshow.domain.Navigator
 
-interface Navigator {
+interface Navigator: Navigator {
 
     val context: Context
-
-    fun startShowActivity(show: Show)
-
-    fun startMainActivity()
 }
