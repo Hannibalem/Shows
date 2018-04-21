@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers
 import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 
-class GetSimilarShowsByPageUseCase(
+internal class GetSimilarShowsByPageUseCase(
         private val networkGateway: NetworkGateway,
         private val showId: Int
 ) : PagedUseCase<List<Show>> {

@@ -4,7 +4,7 @@ import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.pagination.WrapperWithStateFactory
 import mobile.shows.com.singleshow.domain.Navigator
 
-class CardSimilarShowViewModelFactory(
+internal class CardSimilarShowViewModelFactory(
         private val navigator: Navigator
 ) : WrapperWithStateFactory<Show, CardSimilarShowViewModel> {
 

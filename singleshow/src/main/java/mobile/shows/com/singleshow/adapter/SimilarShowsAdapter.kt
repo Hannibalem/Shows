@@ -8,7 +8,7 @@ import mobile.shows.com.singleshow.viewmodel.CardSimilarShowViewModel
 import mobile.shows.com.singleshow.R
 import mobile.shows.com.singleshow.databinding.CardSimilarShowBinding
 
-class SimilarShowsAdapter(
+internal class SimilarShowsAdapter(
         context: Context,
         dataSource: PagedDataSource<Show, CardSimilarShowViewModel>
 ) : RecyclerViewPaginationAdapter<Show, CardSimilarShowViewModel, CardSimilarShowBinding, SimilarShowViewHolder>(

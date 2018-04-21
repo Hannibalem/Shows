@@ -6,7 +6,7 @@ import mobile.shows.com.pagination.WrapperWithStateFactory
 import mobile.shows.com.singleshow.viewmodel.CardSimilarShowViewModel
 import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 
-class SimilarShowsDataSource(
+internal class SimilarShowsDataSource(
         useCase: PagedUseCase<List<Show>>,
         factory: WrapperWithStateFactory<Show, CardSimilarShowViewModel>
 ) : PagedDataSource<Show, CardSimilarShowViewModel>(useCase, factory)

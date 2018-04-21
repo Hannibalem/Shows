@@ -9,7 +9,8 @@ import mobile.shows.com.singleshow.adapter.SimilarShowsAdapter
 import mobile.shows.com.singleshow.viewmodel.CardSimilarShowViewModel
 
 @BindingAdapter("similar_shows")
-fun RecyclerView._bindSimilarShowsDataSource(dataSource: PagedDataSource<Show, CardSimilarShowViewModel>?) {
+internal fun RecyclerView._bindSimilarShowsDataSource(dataSource: PagedDataSource<Show,
+CardSimilarShowViewModel>?) {
     dataSource?.let {
         if (it.pagedList.isEmpty()) {
             return

@@ -9,7 +9,8 @@ import mobile.shows.com.pagination.WrapperWithState
 import mobile.shows.com.singleshow.BR
 import mobile.shows.com.singleshow.domain.Navigator
 
-class CardSimilarShowViewModel(private val navigator: Navigator): BaseObservable(), WrapperWithState<Show> {
+internal class CardSimilarShowViewModel(private val navigator: Navigator): BaseObservable(),
+WrapperWithState<Show> {
 
     @get:Bindable
     override var state: State<Show> by BindableDelegate(State.Empty<Show>(Show.EMPTY), BR.state)

@@ -11,7 +11,7 @@ import mobile.shows.com.commons.domain.usecases.UseCase
 import mobile.shows.com.singleshow.BR
 import mobile.shows.com.singleshow.domain.Navigator
 
-class SingleShowViewModel(
+internal class SingleShowViewModel(
         show: Show,
         private val useCase: UseCase<Shows>,
         private val navigator: Navigator,

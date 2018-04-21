@@ -20,7 +20,7 @@ import mobile.shows.com.singleshow.domain.Navigator
 import mobile.shows.com.singleshow.domain.NetworkGateway
 
 @Module
-class SingleShowModule {
+internal class SingleShowModule {
 
     @Provides
     @ActivityScope

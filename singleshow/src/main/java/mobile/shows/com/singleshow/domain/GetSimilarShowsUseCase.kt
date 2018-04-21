@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers
 import mobile.shows.com.commons.domain.entities.Shows
 import mobile.shows.com.commons.domain.usecases.UseCase
 
-class GetSimilarShowsUseCase(
+internal class GetSimilarShowsUseCase(
         private val networkGateway: NetworkGateway,
         private val showId: Int
 ) : UseCase<Shows> {

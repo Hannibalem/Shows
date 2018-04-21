@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 private const val SHOW = "show"
 
-class SingleShowActivity : AppCompatActivity() {
+internal class SingleShowActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModel: SingleShowViewModel
