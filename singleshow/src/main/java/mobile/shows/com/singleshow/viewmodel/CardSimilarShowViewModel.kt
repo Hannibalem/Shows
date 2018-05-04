@@ -7,7 +7,7 @@ import mobile.shows.com.databindingutils.BindableDelegate
 import mobile.shows.com.pagination.State
 import mobile.shows.com.pagination.WrapperWithState
 import mobile.shows.com.singleshow.BR
-import mobile.shows.com.singleshow.domain.Navigator
+import mobile.shows.com.singleshow.navigation.Navigator
 
 internal class CardSimilarShowViewModel(private val navigator: Navigator): BaseObservable(),
 WrapperWithState<Show> {

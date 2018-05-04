@@ -9,7 +9,7 @@ import mobile.shows.com.databindingutils.BindableDelegate
 import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.commons.domain.usecases.UseCase
 import mobile.shows.com.singleshow.BR
-import mobile.shows.com.singleshow.domain.Navigator
+import mobile.shows.com.singleshow.navigation.Navigator
 
 internal class SingleShowViewModel(
         show: Show,

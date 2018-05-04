@@ -1,5 +1,6 @@
 package mobile.shows.com.singleshow.dagger
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import mobile.shows.com.pagination.PagedDataSource
@@ -16,7 +17,7 @@ import mobile.shows.com.shows.pagination.usecase.PagedUseCase
 import mobile.shows.com.singleshow.SingleShowActivity
 import mobile.shows.com.singleshow.domain.GetSimilarShowsByPageUseCase
 import mobile.shows.com.singleshow.domain.GetSimilarShowsUseCase
-import mobile.shows.com.singleshow.domain.Navigator
+import mobile.shows.com.singleshow.navigation.Navigator
 import mobile.shows.com.singleshow.domain.NetworkGateway
 
 @Module

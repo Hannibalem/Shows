@@ -9,6 +9,8 @@ import mobile.shows.com.shows.domain.api.NetworkGatewayImpl
 import mobile.shows.com.shows.domain.gateways.NetworkGateway
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
+import mobile.shows.com.singleshow.navigation.FeatureNavigator
+import mobile.shows.com.singleshow.navigation.FeatureNavigatorImpl
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -57,14 +59,19 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideNavigator(context: Context): Navigator {
-        return NavigatorImpl(context)
+    fun provideSingleShowFeatureNavigator(context: Context): FeatureNavigator {
+        return FeatureNavigatorImpl(context)
     }
 
     @Provides
     @Singleton
-    fun provideSingleShowNavigator(navigator: Navigator): mobile.shows.com.singleshow.domain.Navigator {
-        return navigator
+    fun provideNavigator(context: Context,  navigator: FeatureNavigator): Navigator {
+        return NavigatorImpl(context, navigator)
     }
 
+    @Provides
+    @Singleton
+    fun provideSingleShowNavigator(navigator: Navigator): mobile.shows.com.singleshow.navigation.Navigator {
+        return navigator
+    }
 }
