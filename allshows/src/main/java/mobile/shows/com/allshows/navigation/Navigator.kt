@@ -1,10 +1,8 @@
-package mobile.shows.com.singleshow.navigation
+package mobile.shows.com.allshows.navigation
 
 import mobile.shows.com.commons.domain.usecases.ShowModel
 
 interface Navigator {
-
-    fun startPreviousActivity()
 
     fun startShowActivity(show: ShowModel)
 }

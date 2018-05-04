@@ -1,33 +1,27 @@
-package mobile.shows.com.singleshow.viewmodel
+package mobile.shows.com.allshows.viewmodel
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import io.reactivex.disposables.CompositeDisposable
+import mobile.shows.com.allshows.BR
+import mobile.shows.com.commons.domain.usecases.ShowModel
+import mobile.shows.com.commons.domain.usecases.ShowsModel
 import mobile.shows.com.databindingutils.BindableDelegate
 import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.commons.domain.usecases.UseCase
-import mobile.shows.com.singleshow.BR
-import mobile.shows.com.commons.domain.usecases.ShowModel
-import mobile.shows.com.commons.domain.usecases.ShowsModel
-import mobile.shows.com.singleshow.navigation.Navigator
 
-internal class SingleShowViewModel(
-        show: ShowModel,
+internal class AllShowsViewModel(
         private val useCase: UseCase<ShowsModel>,
-        private val navigator: Navigator,
-        @Bindable val dataSource: PagedDataSource<ShowModel, CardSimilarShowViewModel>
+        @Bindable val dataSource: PagedDataSource<ShowModel, CardShowViewModel>
 ): BaseObservable() {
 
     private val disposables = CompositeDisposable()
 
-    val imageUrl = "https://image.tmdb.org/t/p/w500${show.image}"
-
-    val title = show.title
-
-    val description = show.description
+    @get:Bindable
+    var errorHappened by BindableDelegate(false, BR.errorHappened)
 
     @get:Bindable
-    var loadingFinished by BindableDelegate(false, BR.loadingFinished)
+    var loading by BindableDelegate(true, BR.loading)
 
     fun destroy() {
         disposables.clear()
@@ -36,18 +30,22 @@ internal class SingleShowViewModel(
 
     fun loadInitial() = disposables.add(useCase.execute().subscribe(this::onPageLoaded, this::onError))
 
-    fun returnToMenu() {
-        navigator.startPreviousActivity()
+    fun retry() {
+        loading = true
+        errorHappened = false
+        loadInitial()
     }
 
     private fun onPageLoaded(shows: ShowsModel) {
         dataSource.totalResults = shows.total
         dataSource.addNewItems(shows.list)
-        loadingFinished = true
+        this.loading = false
         notifyPropertyChanged(BR.dataSource)
     }
 
-    private fun onError(throwable: Throwable){
+    private fun onError(throwable: Throwable) {
         throwable.printStackTrace()
+        this.errorHappened = true
+        this.loading = false
     }
 }

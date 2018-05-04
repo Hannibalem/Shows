@@ -1,2 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="mobile.shows.com.allshows"/>
+          package="mobile.shows.com.allshows">
+    <application>
+        <activity android:name=".AllShowsActivity"/>
+    </application>
+</manifest>

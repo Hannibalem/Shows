@@ -4,14 +4,16 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 import dagger.BindsInstance
+import mobile.shows.com.allshows.dagger.AllShowsInjectorModule
 import mobile.shows.com.singleshow.dagger.SingleShowInjectorModule
 
 @Singleton
 @Component(modules = arrayOf(
         AndroidInjectionModule::class,
         AppModule::class,
-        ActivitiesModule::class,
-        SingleShowInjectorModule::class
+        MainActivityInjectorModule::class,
+        SingleShowInjectorModule::class,
+        AllShowsInjectorModule::class
 ))
 interface AppComponent {
 

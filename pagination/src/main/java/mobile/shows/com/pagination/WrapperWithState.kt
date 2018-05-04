@@ -4,13 +4,16 @@ interface WrapperWithState<ValueT> {
 
     var state: State<ValueT>
 
-    fun onLoading() { state = State.Loading<ValueT>()
+    fun onLoading() {
+        state = State.Loading<ValueT>()
     }
 
-    fun onEmpty() { state = State.Empty<ValueT>()
+    fun onEmpty() {
+        state = State.Empty<ValueT>()
     }
 
-    fun onLoaded(data: ValueT) { state = State.Data<ValueT>(data)
+    fun onLoaded(data: ValueT) {
+        state = State.Data<ValueT>(data)
     }
 
     fun isEmpty() = state is State.Empty<ValueT>

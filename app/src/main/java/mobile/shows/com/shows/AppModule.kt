@@ -9,8 +9,6 @@ import mobile.shows.com.shows.domain.api.NetworkGatewayImpl
 import mobile.shows.com.shows.domain.gateways.NetworkGateway
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
-import mobile.shows.com.singleshow.navigation.FeatureNavigator
-import mobile.shows.com.singleshow.navigation.FeatureNavigatorImpl
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -59,19 +57,40 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideSingleShowFeatureNavigator(context: Context): FeatureNavigator {
-        return FeatureNavigatorImpl(context)
+    internal fun provideAllShowsNetworkGateway(networkGateway: NetworkGateway): mobile.shows.com.allshows.domain.NetworkGateway {
+        return networkGateway
     }
 
     @Provides
     @Singleton
-    fun provideNavigator(context: Context,  navigator: FeatureNavigator): Navigator {
-        return NavigatorImpl(context, navigator)
+    fun provideSingleShowFeatureNavigator(context: Context): mobile.shows.com.singleshow.navigation.FeatureNavigator {
+        return mobile.shows.com.singleshow.navigation.FeatureNavigatorImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAllShowsFeatureNavigator(context: Context): mobile.shows.com.allshows.navigation.FeatureNavigator {
+        return mobile.shows.com.allshows.navigation.FeatureNavigatorImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNavigator(context: Context,
+                         allShowsNavigator: mobile.shows.com.allshows.navigation.FeatureNavigator,
+                         singleShowNavigator: mobile.shows.com.singleshow.navigation.FeatureNavigator
+    ): Navigator {
+        return NavigatorImpl(context, allShowsNavigator, singleShowNavigator)
     }
 
     @Provides
     @Singleton
     fun provideSingleShowNavigator(navigator: Navigator): mobile.shows.com.singleshow.navigation.Navigator {
+        return navigator
+    }
+
+    @Provides
+    @Singleton
+    fun provideAllShowsNavigator(navigator: Navigator): mobile.shows.com.allshows.navigation.Navigator {
         return navigator
     }
 }
