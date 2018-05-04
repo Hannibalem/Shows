@@ -1,10 +1,10 @@
 package mobile.shows.com.singleshow.navigation
 
-import mobile.shows.com.commons.domain.entities.Show
+import mobile.shows.com.commons.domain.usecases.ShowModel
 
 interface Navigator {
 
     fun startMainActivity()
 
-    fun startShowActivity(show: Show)
+    fun startShowActivity(show: ShowModel)
 }

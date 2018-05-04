@@ -3,16 +3,16 @@ package mobile.shows.com.shows.features.allshows.viewmodel
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import io.reactivex.disposables.CompositeDisposable
-import mobile.shows.com.commons.domain.entities.Show
-import mobile.shows.com.commons.domain.entities.Shows
+import mobile.shows.com.commons.domain.usecases.ShowModel
+import mobile.shows.com.commons.domain.usecases.ShowsModel
 import mobile.shows.com.databindingutils.BindableDelegate
 import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.shows.BR
 import mobile.shows.com.commons.domain.usecases.UseCase
 
 class AllShowsViewModel(
-        private val useCase: UseCase<Shows>,
-        @Bindable val dataSource: PagedDataSource<Show, CardShowViewModel>
+        private val useCase: UseCase<ShowsModel>,
+        @Bindable val dataSource: PagedDataSource<ShowModel, CardShowViewModel>
 ): BaseObservable() {
 
     private val disposables = CompositeDisposable()
@@ -36,7 +36,7 @@ class AllShowsViewModel(
         loadInitial()
     }
 
-    private fun onPageLoaded(shows: Shows) {
+    private fun onPageLoaded(shows: ShowsModel) {
         dataSource.totalResults = shows.total
         dataSource.addNewItems(shows.list)
         this.loading = false

@@ -1,7 +1,7 @@
 package mobile.shows.com.shows.navigation
 
 import android.content.Context
-import mobile.shows.com.commons.domain.entities.Show
+import mobile.shows.com.commons.domain.usecases.ShowModel
 import mobile.shows.com.singleshow.navigation.Navigator
 
 interface Navigator: Navigator {
@@ -10,5 +10,5 @@ interface Navigator: Navigator {
 
     fun startAllShows()
 
-    fun startSingleFeature(show: Show)
+    fun startSingleFeature(show: ShowModel)
 }

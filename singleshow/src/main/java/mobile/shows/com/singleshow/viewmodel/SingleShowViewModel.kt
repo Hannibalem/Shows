@@ -3,24 +3,24 @@ package mobile.shows.com.singleshow.viewmodel
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import io.reactivex.disposables.CompositeDisposable
-import mobile.shows.com.commons.domain.entities.Show
-import mobile.shows.com.commons.domain.entities.Shows
 import mobile.shows.com.databindingutils.BindableDelegate
 import mobile.shows.com.pagination.PagedDataSource
 import mobile.shows.com.commons.domain.usecases.UseCase
 import mobile.shows.com.singleshow.BR
+import mobile.shows.com.commons.domain.usecases.ShowModel
+import mobile.shows.com.commons.domain.usecases.ShowsModel
 import mobile.shows.com.singleshow.navigation.Navigator
 
 internal class SingleShowViewModel(
-        show: Show,
-        private val useCase: UseCase<Shows>,
+        show: ShowModel,
+        private val useCase: UseCase<ShowsModel>,
         private val navigator: Navigator,
-        @Bindable val dataSource: PagedDataSource<Show, CardSimilarShowViewModel>
+        @Bindable val dataSource: PagedDataSource<ShowModel, CardSimilarShowViewModel>
 ): BaseObservable() {
 
     private val disposables = CompositeDisposable()
 
-    val imageUrl = "https://image.tmdb.org/t/p/w500${show.image_url}"
+    val imageUrl = "https://image.tmdb.org/t/p/w500${show.image}"
 
     val title = show.title
 
@@ -40,7 +40,7 @@ internal class SingleShowViewModel(
         navigator.startMainActivity()
     }
 
-    private fun onPageLoaded(shows: Shows) {
+    private fun onPageLoaded(shows: ShowsModel) {
         dataSource.totalResults = shows.total
         dataSource.addNewItems(shows.list)
         loadingFinished = true

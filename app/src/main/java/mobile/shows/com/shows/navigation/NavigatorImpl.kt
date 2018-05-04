@@ -2,8 +2,8 @@ package mobile.shows.com.shows.navigation
 
 import android.content.Context
 import android.content.Intent
-import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.shows.features.allshows.MainActivity
+import mobile.shows.com.commons.domain.usecases.ShowModel
 import mobile.shows.com.singleshow.navigation.FeatureNavigator
 
 class NavigatorImpl(
@@ -17,7 +17,7 @@ class NavigatorImpl(
         context.startActivity(intent)
     }
 
-    override fun startShowActivity(show: Show) {
+    override fun startShowActivity(show: ShowModel) {
         singleShowNavigator.startFeature(show)
     }
 
@@ -25,7 +25,7 @@ class NavigatorImpl(
         startMainActivity()
     }
 
-    override fun startSingleFeature(show: Show) {
+    override fun startSingleFeature(show: ShowModel) {
         singleShowNavigator.startFeature(show)
     }
 }

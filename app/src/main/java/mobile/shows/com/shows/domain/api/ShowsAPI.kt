@@ -18,8 +18,9 @@ data class ShowAPI(
         val poster_path: String
 )
 
-fun List<ShowAPI>.map(): List<Show>
-        = this.map { Show(it.id, it.name, it.vote_average, it.overview ?: "", it.poster_path ?: "") }
+fun List<ShowAPI>.map() = this.map {
+    Show(it.id, it.name, it.vote_average, it.overview ?: "", it.poster_path ?: "")
+}
 
-fun ShowsAPI.map(): Shows = Shows(total_results, results.map())
+fun ShowsAPI.map() = Shows(total_results, results.map())
 
