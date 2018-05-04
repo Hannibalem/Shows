@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.domain.api
+package mobile.shows.com.shows.api
 
 import io.reactivex.Single
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package mobile.shows.com.shows.domain.api
+package mobile.shows.com.shows.api
 
 import mobile.shows.com.commons.domain.entities.Show
 import mobile.shows.com.commons.domain.entities.Shows

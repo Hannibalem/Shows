@@ -4,9 +4,9 @@ import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import mobile.shows.com.shows.domain.api.ApiService
-import mobile.shows.com.shows.domain.api.NetworkGatewayImpl
-import mobile.shows.com.shows.domain.gateways.NetworkGateway
+import mobile.shows.com.shows.api.ApiService
+import mobile.shows.com.shows.domain.NetworkGatewayImpl
+import mobile.shows.com.shows.domain.NetworkGateway
 import mobile.shows.com.shows.navigation.Navigator
 import mobile.shows.com.shows.navigation.NavigatorImpl
 import retrofit2.Retrofit
