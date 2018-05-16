@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import mobile.shows.com.commons.domain.usecases.ShowModel
 import mobile.shows.com.pagination.PagedDataSource
-import mobile.shows.com.singleshow.adapter.SimilarShowsAdapter
+import mobile.shows.com.singleshow.pagination.SimilarShowsAdapter
 import mobile.shows.com.singleshow.viewmodel.CardSimilarShowViewModel
 
 @BindingAdapter("similar_shows")

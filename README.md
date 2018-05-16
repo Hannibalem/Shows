@@ -1,5 +1,9 @@
 # Shows
 
-Kotlin + Clean Architecture + Pagination + Databinding + MVVM + RxJava2 + Dagger2 + UnitTesting
+Kotlin + Modularisation + Clean Architecture + Pagination + Databinding + MVVM + RxJava2 + Dagger2 + UnitTesting
 
-![alt text](https://image.ibb.co/i9XpTy/Screen_Shot_2018_05_15_at_17_43_00.png)
+![alt text](https://docs.google.com/uc?id=1bO4fsmQKuSCshiaPlWXSzK6myizVaprA)
+
+Screen flow
+
+![alt text](https://docs.google.com/uc?id=1wFYbqqz9OxntYWdgbfaGQalR_zmamdby)

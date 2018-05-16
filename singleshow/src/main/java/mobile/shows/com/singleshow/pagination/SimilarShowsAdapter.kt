@@ -1,4 +1,4 @@
-package mobile.shows.com.singleshow.adapter
+package mobile.shows.com.singleshow.pagination
 
 import android.content.Context
 import mobile.shows.com.commons.domain.usecases.ShowModel

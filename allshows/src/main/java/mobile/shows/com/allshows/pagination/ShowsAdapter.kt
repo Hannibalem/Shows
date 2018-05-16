@@ -1,4 +1,4 @@
-package mobile.shows.com.allshows.adapter
+package mobile.shows.com.allshows.pagination
 
 import android.content.Context
 import mobile.shows.com.allshows.R

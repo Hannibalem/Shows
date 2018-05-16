@@ -1,4 +1,4 @@
-package mobile.shows.com.singleshow.adapter
+package mobile.shows.com.singleshow.pagination
 
 import mobile.shows.com.shows.pagination.recyclerview.RecyclerViewDataBindingViewHolder
 import mobile.shows.com.singleshow.databinding.CardSimilarShowBinding
